@@ -1,0 +1,75 @@
+.navbar {
+    transition: all 0.4s;
+    font-family: SF Mono, Fira Code, Fira Mono, Roboto Mono, Lucida Console, Monaco, monospace;
+    background-color: #0a192f;
+}
+
+
+.navbar .nav-link {
+    padding: 12px 30px !important;
+    color: rgb(204, 214, 246)!important;
+    font-size: 17px;
+
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color:rgb(100, 255, 218)!important;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color:rgb(100, 255, 218);
+}
+
+.navbar-brand:hover{
+    color: rgb(100, 255, 218)!important;
+}
+
+.navbar-brand{
+    padding-left: 5%;
+}
+
+.btn-outline-info {
+    color: rgb(100, 255, 218);
+    border-color:rgb(100, 255, 218);
+}
+.form-control:focus{
+    border-color: rgb(100, 255, 218);
+    box-shadow: 0 0 0 1px rgb(100, 255, 218);
+}
+
+.btn-outline-info:hover {
+    border-color:rgb(204,214,246);
+}
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #555;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+.navbar-toggler{
+    border-color: rgb(100, 255, 218)!important;
+}
+
+.fa, .fas{
+    color: rgb(100, 255, 218);
+}
+
+
+
