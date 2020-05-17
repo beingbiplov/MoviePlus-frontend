@@ -1,0 +1,4 @@
+.movieposter:hover {
+	cursor: pointer;
+	border :2px solid rgb(100, 255, 218);
+}

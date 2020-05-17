@@ -1,0 +1,49 @@
+.popular{
+	margin: 0px auto;
+	padding: 75px 0px 75px 0px;
+	position: relative;
+}
+
+.popular_title{
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: 10px 0px 40px;
+	white-space: nowrap;
+	font-size: 25px;
+	color: rgb(204, 214, 246);
+}
+.popular h3:after { 
+    content: ""; 
+    flex: 1 1; 
+    border-bottom: 1px solid rgb(48,60,85); 
+    margin-left: 20px;
+    max-width: 300px 
+} 
+
+@media(max-width: 1024px){
+	.popular{
+		padding-left: 10px;
+	}
+}
+
+@media(max-width: 756px){
+	.popular h3:after{
+		max-width: 200px;
+		margin-left: 10px;
+	}
+}
+
+.loadmore{
+	text-align: right;
+	padding: 15px 15px;
+}
+
+.loadmore a{
+	color: rgb(204,214,246);
+	text-decoration: none;
+}
+
+.loadmore a:hover{
+	color: rgb(100, 255, 218);
+}
