@@ -5,22 +5,22 @@ import { Container } from 'react-bootstrap'
 
 
 const Trending = () =>{
-	const [popular_movies, setPopular] = useState({ hits: [] })
+	const [upcomming_movies, setUpcomming] = useState({ hits: [] })
 	const [isLoading, setLoading] = useState(false)
 	const [errorLoading, setError] = useState(false)
 
 	useEffect( () =>{
-		getPopular()
+		getUpcomming()
 
 	}, [])
-	const getPopular = async () => {
+	const getUpcomming = async () => {
 		setLoading(true)
 		try{
 			const response = await fetch(
-		      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`
+				`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_MOVIE_API_KEY}`
 		      );
 		    const data = await response.json();
-		    setPopular(data.results)
+		    setUpcomming(data.results)
 		    setLoading(false)
 		    setError(false)
 		}
@@ -37,7 +37,7 @@ const Trending = () =>{
 		if (errorLoading){
 			re = 'Something went wrong'
 		}else{
-			re = <MovieCard movies = { popular_movies } />
+			re = <MovieCard movies = { upcomming_movies } />
 		} 
 		return re
 	}
@@ -47,7 +47,7 @@ const Trending = () =>{
 		<Container className='moviebar' id='popular'>
 			
 			<h3 className='moviebar_title'>
-				Trending
+				Upcomming
 			</h3>
 			{ result() }
 			{ isLoading ? 'Loading...' : null }

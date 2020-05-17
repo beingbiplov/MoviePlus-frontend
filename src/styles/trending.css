@@ -1,10 +1,10 @@
-.popular{
+.moviebar{
 	margin: 0px auto;
-	padding: 75px 0px 75px 0px;
+	padding: 75px 0px 20px 0px;
 	position: relative;
 }
 
-.popular_title{
+.moviebar_title{
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -13,7 +13,7 @@
 	font-size: 25px;
 	color: rgb(204, 214, 246);
 }
-.popular h3:after { 
+.moviebar h3:after { 
     content: ""; 
     flex: 1 1; 
     border-bottom: 1px solid rgb(48,60,85); 
