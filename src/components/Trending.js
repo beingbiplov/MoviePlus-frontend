@@ -37,7 +37,13 @@ const Trending = () =>{
 		if (errorLoading){
 			re = 'Something went wrong'
 		}else{
-			re = <MovieCard movies = { popular_movies } />
+			if (isLoading){
+				re = 'Loading...'
+			}
+			else{
+				re = <MovieCard movies = { popular_movies } />
+			}
+			
 		} 
 		return re
 	}
@@ -50,7 +56,6 @@ const Trending = () =>{
 				Trending
 			</h3>
 			{ result() }
-			{ isLoading ? 'Loading...' : null }
 			{errorLoading ? null : 
 							<p className='loadmore'>
 								<a href='#' > More </a>
