@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/trending.css'
-import MovieCard from './MovieCard'
+import FullMovieCard from './FullMovieCard'
 import { Container } from 'react-bootstrap'
-import { Link } from "react-router-dom";
 
-const Trending = () =>{
-	const [popular_movies, setPopular] = useState({ hits: [] })
+
+const FullUpcomming = () =>{
+	const [upcomming_movies, setUpcomming] = useState({ hits: [] })
 	const [isLoading, setLoading] = useState(false)
 	const [errorLoading, setError] = useState(false)
 
 	useEffect( () =>{
-		getPopular()
+		getUpcomming()
 
 	}, [])
-	const getPopular = async () => {
+	const getUpcomming = async () => {
 		setLoading(true)
 		try{
 			const response = await fetch(
-		      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`
+				`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_MOVIE_API_KEY}`
 		      );
 		    const data = await response.json();
-		    setPopular(data.results)
+		    setUpcomming(data.results)
 		    setLoading(false)
 		    setError(false)
 		}
@@ -41,28 +41,23 @@ const Trending = () =>{
 				re = 'Loading...'
 			}
 			else{
-				re = <MovieCard movies = { popular_movies } />
+				re = <FullMovieCard movies = { upcomming_movies } />
 			}
-			
 		} 
 		return re
 	}
 
 	return(
 			 
-		<Container className='moviebar' id='trending'>
+		<Container className='moviebar' id='popular'>
 			
 			<h3 className='moviebar_title'>
-				Trending
+				Upcomming
 			</h3>
 			{ result() }
-			{errorLoading ? null : 
-							<p className='loadmore'>
-								<Link to='/popular' > More </Link>
-							</p>
-				}
+		
 			
 		</Container>	
 	)
 }
-export default Trending
+export default FullUpcomming

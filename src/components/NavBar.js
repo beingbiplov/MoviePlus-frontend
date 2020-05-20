@@ -10,7 +10,7 @@ const NavigationBar = () => {
 		<div className="container-fluid" id='navbar_section'>
 		    <Navbar className="navbar  py-3" expand='lg'>
 		        <Navbar.Brand href="#">
-		        	MoviePlus
+		        	<Link to='/'>MoviePlus </Link>
 		        </Navbar.Brand>
 		         <Navbar.Toggle aria-controls="basic-navbar-nav" >
 		         	<i className="fa fa-bars"></i>
@@ -19,8 +19,8 @@ const NavigationBar = () => {
 	            <Navbar.Collapse id="basic-navbar-nav">
 	                <ul className="navbar-nav ml-auto">
 	                    <li className="nav-item active"><Link to='/' className="nav-link text-uppercase">Home <span className="sr-only">(current)</span></Link></li>
-	                    <li className="nav-item"><Link to='/popular' className="nav-link text-uppercase">Trending</Link></li>
-	                    <li className="nav-item"><a href="#" className="nav-link text-uppercase">Films</a></li>
+	                    <li className="nav-item"><Link to='/popular' className="nav-link text-uppercase">popular</Link></li>
+	                    <li className="nav-item"><Link to="/upcomming" className="nav-link text-uppercase">Upcomming</Link></li>
 	                </ul>
 	                <Form inline>
 				      <FormControl type="text" placeholder="Search" className="mr-sm-2" />

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import '../styles/trending.css'
 import MovieCard from './MovieCard'
 import { Container } from 'react-bootstrap'
+import { Link } from "react-router-dom";
 
-
-const Trending = () =>{
+const Upcomming = () =>{
 	const [upcomming_movies, setUpcomming] = useState({ hits: [] })
 	const [isLoading, setLoading] = useState(false)
 	const [errorLoading, setError] = useState(false)
@@ -57,11 +57,11 @@ const Trending = () =>{
 			{ result() }
 			{errorLoading ? null : 
 							<p className='loadmore'>
-								<a href='#' > More </a>
+								<Link to='/upcomming' > More </Link>
 							</p>
 				}
 			
 		</Container>	
 	)
 }
-export default Trending
+export default Upcomming
