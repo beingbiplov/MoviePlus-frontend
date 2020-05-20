@@ -27,5 +27,10 @@
 .movietitle{
 	font-size: 1rem;
 	padding-top: 7px;
+	padding-bottom: 20px;
 	color: white;
+}
+
+.moviecard_col{
+	padding-bottom:20px;
 }

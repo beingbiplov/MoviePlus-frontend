@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from './components/NavBar'
 import Index from './components/Index'
 import Footer from './components/Footer'
+import Popular from './components/Popular'
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +19,9 @@ function App() {
 	      <Switch >
 	      	<Route path='/' exact >
 	      		<Index />
+	      	</Route>
+	      	<Route path='/popular' exact >
+	      		<Popular />
 	      	</Route>
 	      </Switch>
 	      <Footer />

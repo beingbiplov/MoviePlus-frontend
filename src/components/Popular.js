@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/trending.css'
-import MovieCard from './MovieCard'
+import FullMovieCard from './FullMovieCard'
 import { Container } from 'react-bootstrap'
 
 
-const Trending = () =>{
+const Popular = () =>{
 	const [popular_movies, setPopular] = useState({ hits: [] })
 	const [isLoading, setLoading] = useState(false)
 	const [errorLoading, setError] = useState(false)
@@ -41,7 +41,7 @@ const Trending = () =>{
 				re = 'Loading...'
 			}
 			else{
-				re = <MovieCard movies = { popular_movies } />
+				re = <FullMovieCard movies = { popular_movies } />
 			}
 			
 		} 
@@ -50,19 +50,15 @@ const Trending = () =>{
 
 	return(
 			 
-		<Container className='moviebar' id='trending'>
+		<Container className='moviebar' id='popular'>
 			
 			<h3 className='moviebar_title'>
-				Trending
+				Popular
 			</h3>
 			{ result() }
-			{errorLoading ? null : 
-							<p className='loadmore'>
-								<a href='#' > More </a>
-							</p>
-				}
+		
 			
 		</Container>	
 	)
 }
-export default Trending
+export default Popular
