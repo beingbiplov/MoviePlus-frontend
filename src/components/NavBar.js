@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/main.css'
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap'
 import Headroom from 'react-headroom'
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
 	return(
@@ -18,7 +19,7 @@ const NavigationBar = () => {
 	            <Navbar.Collapse id="basic-navbar-nav">
 	                <ul className="navbar-nav ml-auto">
 	                    <li className="nav-item active"><a href="#" className="nav-link text-uppercase">Home <span className="sr-only">(current)</span></a></li>
-	                    <li className="nav-item"><a href="#" className="nav-link text-uppercase">Trending</a></li>
+	                    <li className="nav-item"><Link to='/' className="nav-link text-uppercase">Trending</Link></li>
 	                    <li className="nav-item"><a href="#" className="nav-link text-uppercase">Films</a></li>
 	                </ul>
 	                <Form inline>

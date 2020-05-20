@@ -6,3 +6,26 @@
 	cursor: pointer;
 	border :2px solid rgb(100, 255, 218);
 }
+
+.fa-smile{
+	color: #21d07a;
+}
+
+.fa-meh{
+	color: #d2d531;
+}
+
+.fa-frown{
+	color: red;
+}
+
+.movieinfo{
+	font-size: 15px;
+	font-weight: lighter;
+}
+
+.movietitle{
+	font-size: 1rem;
+	padding-top: 7px;
+	color: white;
+}
