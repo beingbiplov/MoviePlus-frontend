@@ -31,6 +31,14 @@
 	color: white;
 }
 
+.movietitle:hover{
+	color: rgb(100, 255, 218);
+}
+
+a:hover{
+	text-decoration: none;
+}
+
 .moviecard_col{
 	padding-bottom:20px;
 }

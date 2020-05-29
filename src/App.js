@@ -8,8 +8,7 @@ import Details from './components/Details'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 
@@ -28,9 +27,8 @@ function App() {
 	      	<Route path='/upcomming' exact >
 	      		<FullUpcomming />
 	      	</Route>
-	      	<Route path='/details' exact >
-	      		<Details />
-	      	</Route>
+	      	<Route path='/details/:id' exact component={Details} />
+	      	
 	      </Switch>
 	      <Footer />
 

@@ -16,8 +16,7 @@ const MovieCard = (props) =>{
 			return (<i className="fa fa-frown"></i>)
 		}
 	}
-
-	console.log(props.movies.credits.cast)
+	
 	return(
 		<>
 			<h2 className='details_movietitle'>

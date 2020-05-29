@@ -4,7 +4,7 @@ import '../styles/details.css'
 import MovieDetail from './MovieDetail'
 import Casts from './Casts'
 
-const Details = () =>{
+const Details = ({ match }) =>{
 	const [movieDetails, setDetails] = useState([])
 	const [isLoading, setLoading] = useState(false)
 	const [errorLoading, setError] = useState(false)
@@ -18,7 +18,7 @@ const Details = () =>{
 		setLoading(true)
 		try{
 			const response = await fetch(
-		      `https://api.themoviedb.org/3/movie/155?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&append_to_response=credits`
+		      `https://api.themoviedb.org/3/movie/${match.params.id}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&append_to_response=credits`
 		      );
 		    const data = await response.json();
 		    setDetails(data)

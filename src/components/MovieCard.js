@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col, Image } from 'react-bootstrap'
 import '../styles/moviecard.css'
+import { Link } from "react-router-dom";
 
 const MovieCard = (props) =>{
 
@@ -20,11 +21,15 @@ const MovieCard = (props) =>{
 
 		<Col md={2}>
 			<div className="card mb-4 shadow-sm">
-				<Image className="bd-placeholder-img card-img-top movieposter" src= {`https://image.tmdb.org/t/p/w500/${value.poster_path}`} rounded />
+				<Link to={`details/${value.id}`} >
+					<Image className="bd-placeholder-img card-img-top movieposter" src= {`https://image.tmdb.org/t/p/w500/${value.poster_path}`} rounded />
+      			</Link>
       		</div>
       		<p className='movieinfo'> 
       			{ movieRating(value.vote_average)} {value.vote_average * 10 }% <br />
-      			<h5 className='movietitle'>{value.title}</h5>
+      			<Link to={`details/${value.id}`} >
+      				<h5 className='movietitle'>{value.title}</h5>
+      			</Link>
       		</p>
 
 		</Col>
