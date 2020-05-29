@@ -1,0 +1,89 @@
+.details{
+	padding: 45px 0px;
+}
+
+.movieimage{
+	width: 75%;
+	height: 300px;
+	margin-top: 25px;
+	margin-left: 10%;
+}
+
+.movieimage:hover {
+	cursor: pointer;
+	border :2px solid rgb(100, 255, 218);
+}
+
+.details_movietitle{
+	padding-top: 27px;
+	padding-bottom: 2px;
+	color: white;
+}
+
+.tagline{
+	font-style: italic;
+	font-weight: lighter;
+	font-size: 17px;
+	font-family:  Georgia, serif;
+	color: white;
+}
+
+.overview{
+	max-width: 600px;
+	font-size: 17px;
+	color:white;
+	font-weight: lighter;
+}
+
+.moviebar_title{
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: 75px 0px 40px;
+	white-space: nowrap;
+	font-size: 25px;
+	color: rgb(204, 214, 246);
+}
+.moviebar_title:after { 
+    content: ""; 
+    flex: 1 1; 
+    border-bottom: 1px solid rgb(48,60,85); 
+    margin-left: 20px;
+    max-width: 300px 
+} 
+
+.casts{
+	padding: 5px 0px;
+	text-align: center;
+}
+
+.cast_pp{
+	width: 100%;
+	border-radius: 50%;
+	height: 150px;
+	margin-top: 5px;
+}
+
+.cast_pp:hover{
+	border :1px solid rgb(100, 255, 218);
+}
+
+.castName{
+	color: white;
+	margin-bottom: 0px;
+}
+.castCharacter{
+	font-size: 14px;
+	font-weight: lighter;
+	color: white;
+}
+.loadmore{
+	text-align: right;
+	padding: 5px 15px;
+	cursor: pointer;
+	width: 100%;
+}
+
+.loadmore:hover{
+	color: rgb(100, 255, 218);
+}

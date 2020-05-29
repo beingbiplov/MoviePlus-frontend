@@ -4,6 +4,7 @@ import Index from './components/Index'
 import Footer from './components/Footer'
 import Popular from './components/Popular'
 import FullUpcomming from './components/FullUpcomming'
+import Details from './components/Details'
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,6 +27,9 @@ function App() {
 	      	</Route>
 	      	<Route path='/upcomming' exact >
 	      		<FullUpcomming />
+	      	</Route>
+	      	<Route path='/details' exact >
+	      		<Details />
 	      	</Route>
 	      </Switch>
 	      <Footer />

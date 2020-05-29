@@ -9,9 +9,11 @@ const NavigationBar = () => {
 		<Headroom>
 		<div className="container-fluid" id='navbar_section'>
 		    <Navbar className="navbar  py-3" expand='lg'>
-		        <Navbar.Brand href="#">
-		        	<Link to='/'>MoviePlus </Link>
-		        </Navbar.Brand>
+		       	<Link to='/'> 
+		       		<Navbar.Brand>
+		        		MoviePlus 
+		       		</Navbar.Brand>
+		       	</Link>
 		         <Navbar.Toggle aria-controls="basic-navbar-nav" >
 		         	<i className="fa fa-bars"></i>
 		         </Navbar.Toggle>
