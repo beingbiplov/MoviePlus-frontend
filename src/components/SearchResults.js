@@ -1,37 +1,42 @@
 import React, { useState, useEffect } from 'react'
-import '../styles/trending.css'
-import MovieCard from './MovieCard'
+import '../styles/search.css'
 import { Container } from 'react-bootstrap'
 import { Link } from "react-router-dom";
+import FullMovieCard from './FullMovieCard'
 
-const Trending = () =>{
-	const [popular_movies, setPopular] = useState({ hits: [] })
+const SearchResults = ({ match }) =>{
+
+	const [searchResult, setSearch] = useState({ hits: [] })
 	const [isLoading, setLoading] = useState(false)
 	const [errorLoading, setError] = useState(false)
+	const [isLoaded, setLoaded] = useState(false)
 
 	useEffect( () =>{
-		getPopular()
+		getSearchResult()
 
 	}, [])
-	const getPopular = async () => {
+
+	const getSearchResult = async () => {
 		setLoading(true)
 		try{
 			const response = await fetch(
-		      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`
+		      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&query=${match.params.query}`
 		      );
 		    const data = await response.json();
-		    setPopular(data.results)
+		    setSearch(data.results)
 		    setLoading(false)
 		    setError(false)
+		    setLoaded(true)
 		}
 	    catch(err){
 	    	console.log('Error')
 	    	console.log(err)
 	    	setLoading(false)
 	    	setError(true)
+	    	setLoaded(false)
 	    }
 	}	
-	
+
 	const result = () =>{
 		let re = ''
 		if (errorLoading){
@@ -40,8 +45,8 @@ const Trending = () =>{
 			if (isLoading){
 				re = 'Loading...'
 			}
-			else{
-				re = <MovieCard movies = { popular_movies } />
+			else if (isLoaded){
+				re = <FullMovieCard movies = { searchResult } />
 			}
 			
 		} 
@@ -49,20 +54,16 @@ const Trending = () =>{
 	}
 
 	return(
-			 
-		<Container className='moviebar' id='trending'>
+		<Container className='moviebar' id='popular'>
 			
 			<h3 className='moviebar_title'>
-				Trending
+				Search results:
 			</h3>
 			{ result() }
-			{errorLoading ? null : 
-				<p className='loadmore'>
-					<Link to='/popular' > More </Link>
-				</p>
-			}
+		
 			
 		</Container>	
 	)
 }
-export default Trending
+
+export default SearchResults

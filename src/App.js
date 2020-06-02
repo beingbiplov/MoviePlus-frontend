@@ -5,10 +5,12 @@ import Footer from './components/Footer'
 import Popular from './components/Popular'
 import FullUpcomming from './components/FullUpcomming'
 import Details from './components/Details'
+import SearchResults from './components/SearchResults'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 
@@ -28,7 +30,13 @@ function App() {
 	      		<FullUpcomming />
 	      	</Route>
 	      	<Route path='/details/:id' exact component={Details} />
+
+	      	<Route exact path='/search/:query' component={SearchResults} />
 	      	
+	      	 {/* Find better solution. Using redirect to handle route issues */}.
+	      	<Redirect from="/search/search/:query" to="/search/:query"/>
+	      	<Redirect from="/search/details/:id" to="/details/:id"/>
+
 	      </Switch>
 	      <Footer />
 

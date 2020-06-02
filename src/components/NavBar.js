@@ -3,6 +3,7 @@ import '../styles/main.css'
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap'
 import Headroom from 'react-headroom'
 import { Link } from "react-router-dom";
+import SearchForm from './SearchForm'
 
 const NavigationBar = () => {
 	return(
@@ -24,10 +25,7 @@ const NavigationBar = () => {
 	                    <li className="nav-item"><Link to='/popular' className="nav-link text-uppercase">popular</Link></li>
 	                    <li className="nav-item"><Link to="/upcomming" className="nav-link text-uppercase">Upcomming</Link></li>
 	                </ul>
-	                <Form inline>
-				      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-				      <Button variant="outline-info">Search</Button>
-				    </Form>
+	                <SearchForm />
 	            </Navbar.Collapse>
 
 		        
