@@ -3,10 +3,11 @@ import '../styles/search.css'
 import { Container } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 import FullMovieCard from './FullMovieCard'
+import Index from './Index'
 
 const SearchResults = ({ match }) =>{
 
-	const [searchResult, setSearch] = useState({ hits: [] })
+	const [searchResult, setSearch] = useState({})
 	const [isLoading, setLoading] = useState(false)
 	const [errorLoading, setError] = useState(false)
 	const [isLoaded, setLoaded] = useState(false)
@@ -46,18 +47,27 @@ const SearchResults = ({ match }) =>{
 				re = 'Loading...'
 			}
 			else if (isLoaded){
-				re = <FullMovieCard movies = { searchResult } />
-			}
+				if (searchResult.length === 0){
+					re = 'Your query didnot match any of the data. Please try again.'
+				} 
+				else {
+					re = <FullMovieCard movies = { searchResult } />
+
+				}
+				
+			}	
 			
 		} 
 		return re
 	}
 
+	
+
 	return(
 		<Container className='moviebar' id='popular'>
 			
 			<h3 className='moviebar_title'>
-				Search results:
+				Search results - <small className='query'> { match.params.query}</small>
 			</h3>
 			{ result() }
 		

@@ -36,6 +36,7 @@ function App() {
 	      	 {/* Find better solution. Using redirect to handle route issues */}.
 	      	<Redirect from="/search/search/:query" to="/search/:query"/>
 	      	<Redirect from="/search/details/:id" to="/details/:id"/>
+	      	<Redirect from="/details/search/:query" to="/search/:query"/>
 
 	      </Switch>
 	      <Footer />

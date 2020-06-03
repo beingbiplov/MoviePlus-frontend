@@ -51,6 +51,7 @@ const Details = ({ match }) =>{
 		return re
 	}
 
+	console.log(movieDetails)
 	return(
 		<Container className='details'>
 			<Row>
