@@ -44,14 +44,31 @@ const Details = ({ match }) =>{
 				re = 'Loading...'
 			}
 			else if (isLoaded){
-				re = <MovieDetail movies = { movieDetails } />
+				if (movieDetails.status_code === 34){
+					re = movieDetails.status_message
+				}
+				else{
+					re = <MovieDetail movies = { movieDetails } />
+				}
 			}
 			
 		} 
 		return re
 	}
 
-	console.log(movieDetails)
+	const getCast = () =>{
+		let cast = ''
+		if (isLoaded){
+			if (movieDetails.status_code === 34){
+				cast = null
+			}
+			else{
+				cast = <Casts moviecasts = {movieDetails.credits.cast}  />
+			}
+		}
+		return cast
+	}
+
 	return(
 		<Container className='details'>
 			<Row>
@@ -63,7 +80,7 @@ const Details = ({ match }) =>{
 					{ result() }
 				</Col>
 			</Row>
-			{ isLoaded ? <Casts moviecasts = {movieDetails.credits.cast}  /> : null }
+			{ getCast() }
 			
 		</Container>
 	)
