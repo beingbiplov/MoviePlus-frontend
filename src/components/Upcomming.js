@@ -25,8 +25,6 @@ const Upcomming = () =>{
 		    setError(false)
 		}
 	    catch(err){
-	    	console.log('Error')
-	    	console.log(err)
 	    	setLoading(false)
 	    	setError(true)
 	    }

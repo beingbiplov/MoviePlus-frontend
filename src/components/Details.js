@@ -3,6 +3,7 @@ import { Container, Row, Col, Image } from 'react-bootstrap'
 import '../styles/details.css'
 import MovieDetail from './MovieDetail'
 import Casts from './Casts'
+import VideoModal from './VideoModal'
 
 const Details = ({ match }) =>{
 	const [movieDetails, setDetails] = useState([])
@@ -18,7 +19,7 @@ const Details = ({ match }) =>{
 		setLoading(true)
 		try{
 			const response = await fetch(
-		      `https://api.themoviedb.org/3/movie/${match.params.id}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&append_to_response=credits`
+		      `https://api.themoviedb.org/3/movie/${match.params.id}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&append_to_response=credits,videos`
 		      );
 		    const data = await response.json();
 		    setDetails(data)
@@ -69,12 +70,34 @@ const Details = ({ match }) =>{
 		return cast
 	}
 
+	const getTrailer = () =>{
+		let trailer = ''
+		if (isLoaded){
+			if (movieDetails.status_code === 34){
+				trailer = null
+			}
+			else{
+				if (movieDetails.videos.results.length === 0){
+					trailer = null
+				}
+				else{
+					trailer = <VideoModal trailerDetail = { movieDetails.videos.results }  />	
+				}
+				
+			}
+		}
+		return trailer
+	}
+
+	console.log(movieDetails)
+
 	return(
 		<Container className='details'>
 			<Row>
 				<Col lg={4}>
 					<Image className="bd-placeholder-img card-img-top movieimage" src={ `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}` }
 						preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail" rounded />
+					{ getTrailer() }
 				</Col>
 				<Col lg={8}>
 					{ result() }

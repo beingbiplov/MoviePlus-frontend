@@ -23,10 +23,9 @@ const Popular = () =>{
 		    setPopular(data.results)
 		    setLoading(false)
 		    setError(false)
+		    console.log(isLoading)
 		}
 	    catch(err){
-	    	console.log('Error')
-	    	console.log(err)
 	    	setLoading(false)
 	    	setError(true)
 	    }

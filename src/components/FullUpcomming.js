@@ -12,7 +12,7 @@ const FullUpcomming = () =>{
 	useEffect( () =>{
 		getUpcomming()
 
-	}, [])
+	})
 	const getUpcomming = async () => {
 		setLoading(true)
 		try{
@@ -25,8 +25,6 @@ const FullUpcomming = () =>{
 		    setError(false)
 		}
 	    catch(err){
-	    	console.log('Error')
-	    	console.log(err)
 	    	setLoading(false)
 	    	setError(true)
 	    }

@@ -1,4 +1,6 @@
 import React from 'react';
+import 'react-modal-video/scss/modal-video.scss';
+
 import NavBar from './components/NavBar'
 import Index from './components/Index'
 import Footer from './components/Footer'

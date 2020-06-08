@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/search.css'
 import { Container } from 'react-bootstrap'
-import { Link } from "react-router-dom";
 import FullMovieCard from './FullMovieCard'
-import Index from './Index'
 
 const SearchResults = ({ match }) =>{
 
@@ -67,7 +65,7 @@ const SearchResults = ({ match }) =>{
 		<Container className='moviebar' id='popular'>
 			
 			<h3 className='moviebar_title'>
-				Search results - <small className='query'> { match.params.query}</small>
+				Search results - <small className='query'> { match.params.query.replace('+',' ')}</small>
 			</h3>
 			{ result() }
 		

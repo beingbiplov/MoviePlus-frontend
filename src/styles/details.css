@@ -87,3 +87,20 @@
 .loadmore:hover{
 	color: rgb(100, 255, 218);
 }
+
+.fa-youtube{
+	font-size: 30px;
+	padding: 25px 2px;
+}
+.trailer_info{
+	width: 80%;
+	text-align: center;
+	cursor:pointer;
+}
+
+.trailer_info:hover{
+	color: rgb(100, 255, 218);
+}
+.fa-youtube:hover{
+	color: #ff0000;
+}

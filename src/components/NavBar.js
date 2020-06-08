@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/main.css'
-import { Navbar, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar } from 'react-bootstrap'
 import Headroom from 'react-headroom'
 import { Link } from "react-router-dom";
 import SearchForm from './SearchForm'
