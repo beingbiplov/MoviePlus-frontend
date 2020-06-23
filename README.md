@@ -1,4 +1,4 @@
-# [MoviePlus-frontend](moviepluss.herokuapp.com/)
+# [MoviePlus-frontend](https://moviepluss.herokuapp.com/)
 
 A movie application created with React. 
 
